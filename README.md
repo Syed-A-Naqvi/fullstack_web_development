@@ -1,2 +1,1 @@
-# Javascript Practice
-#Practicing Frontend Development
+# Practicing Front-end Development
