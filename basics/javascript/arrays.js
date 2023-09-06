@@ -37,3 +37,30 @@ console.log(shifted);
 //unshift() is used to add an element to the beginning of an array
 myData.unshift(123);
 console.log(myData);
+
+// we can use the spread operator to copy the contents of one array into another
+const arr1 = ['JAN', 'FEB', 'MAR', 'APR', 'MAY'];
+let arr2;
+(function(){
+    //arr2 = arr1; //this will not work as it will only copy the reference to the array
+    // instead, right side of the assignment returns 
+    arr2 = [...arr1];
+    arr1[0] = 'potato'; 
+})();
+console.log(arr2);
+
+(function(){
+    
+    const obj1 = { name: 'John' };
+    const obj2 = { name: 'Alice' };
+
+    const arr1 = [obj1, obj2];
+    const arr2 = [...arr1]; // Shallow copy
+
+    arr2[0].name = 'Bob';
+    arr1.push({ name: 'Mary' });
+
+    console.log(arr1); // 'Bob' (change is reflected in arr1)
+    console.log(arr2); // 'Bob'
+
+})();

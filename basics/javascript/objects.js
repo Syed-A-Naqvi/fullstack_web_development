@@ -243,3 +243,21 @@ function lookUpProfile(name, prop){
 };
 console.log(lookUpProfile("Akira", "likes"));
 
+//we can use destructuring assignment to assign individual variables from objects
+
+const myObj = { x: '1', y: '2', z: '3'};
+const { x: a, y: b, z: c } = myObj;
+console.log(a + b + c);
+
+
+const AVG_TEMPERATURES = {
+    today: 77.5,
+    tomorrow: 79
+}
+function getTempOfTmrw(avgTemperatures){
+    "use strict";
+    const {today: tempOfToday, tomorrow:tempOfTmrw} = avgTemperatures
+    return tempOfTmrw;
+}
+
+console.log(getTempOfTmrw(AVG_TEMPERATURES));
