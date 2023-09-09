@@ -1,8 +1,8 @@
-const API_LINK = 'https://www.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=f9d40e502f6e051fd1b2ebbbd27f8435=1';
+const API_LINK = 'http://127.0.0.1:3000/api/movies';
 const IMG_PATH = 'https://image.tmdb.org/t/p/w1280';
-const SEARCH_API = 'https://www.themoviedb.org/3/search/movie?&api_key=f9d40e502f6e051fd1b2ebbbd27f8435=';
+const SEARCH_API = 'http://127.0.0.1:3000/api/search';
 
-const movielist = document.getElementById('movielist');
+const movielist = document.getElementById('movie-list');
 const form = document.getElementById('form');
 const search = document.getElementById('query');
 
@@ -24,10 +24,11 @@ function returnMovies(url){
 
             const title = document.createElement('h3');
             title.style.margin='opx';
+            title.innerHTML = element.title;
 
             div_card.appendChild(img);
             div_card.appendChild(title);
-            main.appendChild(div_card);
+            movielist.appendChild(div_card);
         
         })
     })
@@ -38,11 +39,11 @@ form.addEventListener("submit", (e) => {
     e.preventDefault();
     main.innerHTML = "";
 
-    const searchItem = search.ariaValueMax;
+    const searchItem = search.value;
 
     if(searchItem){
-        returnMovies(SEARCH_API + searchItem);
-        searchItem.valuel = "";
+        returnMovies(`${SEARCH_API}?query=${searchItem}`);
+        searchItem.value = "";
     }
 
 });
