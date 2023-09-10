@@ -1,0 +1,4 @@
+#.gitignore
+
+#Ignore .env files
+./movieSiteWebapp/backend/.env.sample
