@@ -1,0 +1,1 @@
+The purpose of this project was to work on creating a web application involving frontend, backend and database development. The idea was to create a movies app that would utilize REST API's and dynamically update with new information, displaying it in a visually appealing format for the end user. 
